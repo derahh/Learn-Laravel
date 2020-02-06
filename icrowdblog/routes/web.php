@@ -24,3 +24,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function() {
+    return "ini halaman test1";
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/blog', function () {
+    return view('blog/welcome');
+});
