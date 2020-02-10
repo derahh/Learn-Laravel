@@ -33,6 +33,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/blog', function () {
-    return view('blog/welcome');
-});
+Route::get('/blog', 'BlogController@index');
+// Route::get('/blog/{id}', 'BlogController@show');
+Route::get('/blog/{id}', 'BlogController@single');
