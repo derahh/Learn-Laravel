@@ -25,7 +25,7 @@ class Kontak extends Controller
      */
     public function create()
     {
-        //
+        return view('kontak_create');
     }
 
     /**
@@ -36,7 +36,13 @@ class Kontak extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new ModelKontak();
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->nohp = $request->nohp;
+        $data->alamat = $request->alamat;
+        $data->save();
+        return redirect()->route('kontak.index')->with('alert-success', 'Berhasil menambah Data!');
     }
 
     /**

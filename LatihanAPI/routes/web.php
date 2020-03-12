@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/kontak_create', function () {
+    return view('kontak_create');
+});
+
 Route::get('halaman-kedua', function() {
     return view('halamandua');
 });

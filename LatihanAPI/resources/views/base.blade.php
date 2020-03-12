@@ -37,7 +37,7 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="#">- Tambah Kontak</a>
+                    <a href="/kontak_create">- Tambah Kontak</a>
                 </li>
                 <li>
                     <a href="/kontak">- Daftar Kontak</a>
