@@ -11,6 +11,7 @@
 |
 */
 
+Route::resource('kontak', 'Kontak');
 Route::get('/', function () {
     return view('index');
 });

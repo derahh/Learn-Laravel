@@ -40,7 +40,7 @@
                     <a href="#">- Tambah Kontak</a>
                 </li>
                 <li>
-                    <a href="#">- Daftar Kontak</a>
+                    <a href="/kontak">- Daftar Kontak</a>
                 </li>
             </ul>
         </aside>
