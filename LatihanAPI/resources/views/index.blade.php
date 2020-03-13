@@ -9,7 +9,7 @@
             <p>Apa saja yang akan kamu pelajari ?</p>
 
             <h2>* Templating Laravel 5.4</h2>
-            <h2>* CRUD dengan Laravel 5.4 (Soon)</h2>
+            <h2>* CRUD dengan Laravel 5.4</h2>
             <h2>* Upload Image dengan laravel 5.4 (Soon)</h2>
             <h2>* Login & Register dengan Auth & Session built in Laravel 5.4 (Soon)</h2>
             <h2>* Kirim E-mail dengan Laravel 5.4 (Soon)</h2>
