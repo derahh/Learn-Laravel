@@ -20,6 +20,8 @@ Route::get('/kontak_create', function () {
     return view('kontak_create');
 });
 
+Route::get('/api/kontak','ControllerKontak@index');
+
 Route::get('halaman-kedua', function() {
     return view('halamandua');
 });
