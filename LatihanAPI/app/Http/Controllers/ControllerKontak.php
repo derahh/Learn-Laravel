@@ -116,7 +116,26 @@ class ControllerKontak extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nama = $request->input('nama');
+        $email = $request->input('email');
+        $nohp = $request->input('nohp');
+        $alamat = $request->input('alamat');
+    
+        $data = \App\Kontak::where('id',$id)->first();
+        $data->nama = $nama;
+        $data->email = $email;
+        $data->nohp = $nohp;
+        $data->alamat = $alamat;
+    
+        if($data->save()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
+        else{
+            $res['message'] = "Failed!";
+            return response($res);
+        }
     }
 
     /**
