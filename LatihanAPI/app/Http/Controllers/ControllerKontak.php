@@ -14,17 +14,18 @@ class ControllerKontak extends Controller
     public function index()
     {
         //
-    $data = \App\Kontak::all();
+        $data = \App\Kontak::all(); //seperti => select * from kontak
 
-    if(count($data) > 0){ //mengecek apakah data kosong atau tidak
-        $res['message'] = "Success!";
-        $res['values'] = $data;
-        return response($res);
-    }
-    else{
-        $res['message'] = "Empty!";
-        return response($res);
-    }
+        if(count($data) > 0){ //mengecek apakah data kosong atau tidak
+            $res['message'] = "Success!";
+            $res['values'] = $data;
+            return response($res);
+        }
+        else
+        {
+            $res['message'] = "Empty!";
+            return response($res);
+        }
     }
 
     /**
@@ -45,7 +46,31 @@ class ControllerKontak extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //menginput data berdasarkan kolom
+        $nama = $request->input('nama');
+        $email = $request->input('email');
+        $nohp = $request->input('nohp');
+        $alamat = $request->input('alamat');
+    
+        $data = new \App\Kontak(); //seperti insert ke database
+        //insert berdasarkan kolom
+        $data->nama = $nama;
+        $data->email = $email;
+        $data->nohp = $nohp;
+        $data->alamat = $alamat;
+    
+        //menegecek apakah berhasil ke save
+        if($data->save())
+        {
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
+        else
+        {
+            $res['message'] = "Failed!";
+            return response($res);
+        }
     }
 
     /**
@@ -58,12 +83,14 @@ class ControllerKontak extends Controller
     {
         $data = \App\Kontak::where('id',$id)->get();
     
-        if(count($data) > 0){ //mengecek apakah data kosong atau tidak
+        if(count($data) > 0) //mengecek apakah data kosong atau tidak
+        {
             $res['message'] = "Success!";
             $res['values'] = $data;
             return response($res);
         }
-        else{
+        else
+        {
             $res['message'] = "Failed!";
             return response($res);
         }
