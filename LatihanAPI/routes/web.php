@@ -24,6 +24,8 @@ Route::get('/api/kontak','ControllerKontak@index');
 Route::get('/api/kontak/{id}','ControllerKontak@show');
 Route::post('/api/kontak/store','ControllerKontak@store');
 Route::post('/api/kontak/update/{id}','ControllerKontak@update');
+Route::post('/api/kontak/delete/{id}','ControllerKontak@destroy');
+// Route::post('/api/kontak/delete_all','ControllerKontak@destroyAll');
 
 Route::get('halaman-kedua', function() {
     return view('halamandua');

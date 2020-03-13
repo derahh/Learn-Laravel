@@ -146,6 +146,36 @@ class ControllerKontak extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = \App\Kontak::where('id',$id)->first();
+    
+        if($data->delete()){
+            $res['message'] = "Success!";
+            $res['value'] = "$data";
+            return response($res);
+        }
+        else{
+            $res['message'] = "Failed!";
+            return response($res);
+        }
     }
+
+    /**
+     * Remove all resource from storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    // public function destroyAll()
+    // {
+    //     $data = \App\Kontak::all();
+    
+    //     if($data->delete()){
+    //         $res['message'] = "Success!";
+    //         $res['value'] = "$data";
+    //         return response($res);
+    //     }
+    //     else{
+    //         $res['message'] = "Failed!";
+    //         return response($res);
+    //     }
+    // }
 }
