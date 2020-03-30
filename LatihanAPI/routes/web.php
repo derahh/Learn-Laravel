@@ -30,3 +30,7 @@ Route::post('/api/kontak/delete/{id}','ControllerKontak@destroy');
 Route::get('halaman-kedua', function() {
     return view('halamandua');
 });
+
+//Excel
+Route::get('/siswa', 'SiswaController@index');
+Route::get('/siswa/export_excel', 'SiswaController@export_excel');
